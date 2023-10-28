@@ -6,8 +6,9 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-export const ChatSidebar = () => {
+export const ChatSidebar = ({ chatId }) => {
     const [chatList, setChatList] = useState([]);
+
     useEffect(() => {
         const loadChatList = async () => {
             const response = await fetch(`/api/chat/getChatList`, {
@@ -18,7 +19,7 @@ export const ChatSidebar = () => {
             setChatList(json?.chats || []);
         };
         loadChatList();
-    }, []);
+    }, [chatId]);
     return (
         <div className="flex flex-col overflow-hidden bg-gray-900 text-white">
             <Link
@@ -26,16 +27,19 @@ export const ChatSidebar = () => {
                 className="side-menu-item bg-emerald-500 hover:bg-emerald-600"
             >
                 <FontAwesomeIcon icon={faPlus} />
-                New Chat Link
+                New Chat
             </Link>
             <div className="flex-1 overflow-auto bg-gray-950">
                 {chatList.map((chat) => (
                     <Link
                         key={chat._id}
                         href={`/chat/${chat._id}`}
-                        className="side-menu-item"
+                        className={`side-menu-item ${chatId === chat._id
+                            ? "bg-gray-700 hover:bg-gray-700"
+                            : ""
+                            }`}
                     >
-                        <FontAwesomeIcon icon={faMessage} /> {chat.title}
+                        <FontAwesomeIcon icon={faMessage} /> <span title={chat.title} className="overflow-hidden text-ellipsis whitespace-nowrap">{chat.title}</span>
                         {""}
                     </Link>
                 ))}
