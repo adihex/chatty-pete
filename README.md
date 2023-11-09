@@ -1,34 +1,64 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Chatty Pete
+
+Chatty Pete is a chat application powered by ChatGPT, a language model developed by OpenAI using the GPT-3.5 turbo model. This application is built with Next.js for the frontend, utilizing the OpenAI API for natural language processing. The UI is styled with Tailwind CSS, providing a clean and responsive design.
+
+## Features
+
+- **Chat with ChatGPT:** Engage in conversations with ChatGPT, a powerful language model that can generate human-like text based on the input it receives.
+
+- **Persistent Chats:** All your conversations are stored using MongoDB, ensuring that you can pick up where you left off even if you close or refresh the page.
 
 ## Getting Started
 
-First, run the development server:
+To run Chatty Pete locally, follow these steps:
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/adihex/chatty-pete.git
+cd chatty-pete
+```
+
+2. Install dependencies:
+
+```bash
+npm install
+```
+
+3. Set up your environment variables:
+
+   Create a `.env.local` file in the root directory and add the following:
+
+   ```env
+   OPENAI_API_KEY=your_openai_api_key
+   MONGODB_URI=your_mongodb_uri
+   ```
+
+   Replace `your_openai_api_key` with your OpenAI API key and `your_mongodb_uri` with your MongoDB connection string.
+
+4. Run the application:
 
 ```bash
 npm run dev
-# or
-yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Visit [http://localhost:3000](http://localhost:3000) in your browser to start chatting with Pete!
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## Deployment
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+Chatty Pete is deployed on Vercel and can be accessed at [chatty-pete-ecru.vercel.app](https://chatty-pete-ecru.vercel.app/).
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Contributing
 
-## Learn More
+Feel free to contribute to Chatty Pete by submitting issues or pull requests. Your feedback and contributions are highly appreciated!
 
-To learn more about Next.js, take a look at the following resources:
+## License
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Acknowledgments
 
-## Deploy on Vercel
+- OpenAI for providing the powerful GPT-3.5 turbo model.
+- The Next.js, Tailwind CSS, and MongoDB communities for their amazing tools and resources.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Happy chatting with Chatty Pete!
