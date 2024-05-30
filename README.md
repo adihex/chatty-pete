@@ -49,12 +49,6 @@ Chatty Pete is a chat application powered by ChatGPT, created using Next.js, Ope
 
    Open [http://localhost:3000](http://localhost:3000) in your browser to access Chatty Pete.
 
-## Deployment
-
-Chatty Pete is deployed on Vercel. Simply push your changes to the `main` branch, and Vercel will automatically deploy the latest version.
-
-Visit the deployed site: [Chatty Pete](https://chatty-pete-ecru.vercel.app/)
-
 ## Credits
 
 Special thanks to [Tom Phillips](https://github.com/tomphill) for the helpful guidance in learning Next.js.
